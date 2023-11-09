@@ -37,12 +37,25 @@ class CustomCard extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
                     child: Container(
                       width: 100,
-                      color: Colors.green,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: image,
-                            fit: BoxFit.cover,
+                      //color: Colors.green,
+                      child: GestureDetector(
+                        onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const PictureScreen(),
+                          )
+                        ),
+                        child: Hero(
+                          tag: 'imageHero',
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: image,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -112,7 +125,7 @@ class CustomCard extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   publisher,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 15,
                                       color: Colors.white70,
                                       fontWeight: FontWeight.w500
@@ -134,29 +147,7 @@ class CustomCard extends StatelessWidget {
                               ),
                             ],
                           ),
-                          // Text(date),
-                          // Text(event),
-                          // Text(location),
-                          // Text(publisher),
-                          // Align(
-                          //   alignment: Alignment.topLeft,
-                          //     child: Text(
-                          //       date,
-                          //       style: const TextStyle(
-                          //         color: Colors.white,
-                          //         fontSize: 15.0,
-                          //       ),
-                          //     )
-                          // ),
-                          // SizedBox(height: 5.0,),
-                          // Text(
-                          //     event,
-                          //   style: TextStyle(
-                          //       color: Colors.white,
-                          //       fontSize: 18.0,
-                          //       fontWeight: FontWeight.bold
-                          //   ),
-                          // ),
+
                         ],
                       ),
                     ),
@@ -164,21 +155,46 @@ class CustomCard extends StatelessWidget {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: EdgeInsets.fromLTRB(10, 15, 10, 15),
-            //   child: Container(
-            //     width: 120,
-            //     color: Colors.green,
-            //   ),
-            // ),
-            // Container(
-            //   width: 30,
-            //   color: Colors.blue,
-            // ),
-            // Container(
-            //   width: 30,
-            //   color: Colors.red,
-            // )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class PictureScreen extends StatelessWidget {
+  const PictureScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Hero(
+              tag: 'imageHero',
+              child: SingleChildScrollView(
+                child: Container(
+                  color: Colors.black,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: const DecoratedBox(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          "assets/professional_pic_of_me.jpeg",
+                          //width: 100,
+                          //height: 140,
+                        ),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
