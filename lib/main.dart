@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roping_event_app/custom_widgets/cards.dart';
 import 'package:roping_event_app/screens/account.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/search.dart';
@@ -6,8 +7,8 @@ import 'screens/home.dart';
 import 'package:device_preview/device_preview.dart';
 void main() {
   runApp(DevicePreview(
-    //enabled: true,
-    enabled: false,
+    enabled: true,
+    //  enabled: false,
     builder: (context) => const MyApp())
   );
 }
@@ -64,6 +65,7 @@ class _HomePageState extends State<HomePage> {
           SearchEventsScreen(),
           FavoritesScreen(),
           AccountScreen(),
+          //PictureScreen()
         ],
         onPageChanged: (index) {
           setState(() {
