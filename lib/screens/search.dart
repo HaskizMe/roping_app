@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:roping_event_app/custom_widgets/cards.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 class SearchEventsScreen extends StatefulWidget {
   const SearchEventsScreen({Key? key}) : super(key: key);
 
@@ -18,6 +19,7 @@ class _SearchEventsScreenState extends State<SearchEventsScreen> {
 
     super.dispose();
   }
+  int _selectedIndex = 0; // 0 for List View, 1 for Map View
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,15 +32,6 @@ class _SearchEventsScreenState extends State<SearchEventsScreen> {
           toolbarHeight: 40,
           elevation: 0.0,
           backgroundColor: Colors.black,
-          // actions: [
-          //   IconButton(
-          //     icon: Icon(Icons.search),
-          //     iconSize: 40,
-          //     onPressed: () {
-          //       showSearch(context: context, delegate: DataSearch());
-          //     },
-          //   ),
-          // ],
         ),
         body: Padding(
           padding: EdgeInsets.all(16.0),
@@ -84,7 +77,83 @@ class _SearchEventsScreenState extends State<SearchEventsScreen> {
                 onEditingComplete: () {
                   FocusScope.of(context).unfocus();
                 },
-              )
+              ),
+
+              const SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white, // Set your desired background color
+                      borderRadius: BorderRadius.circular(15.0), // Adjust the value for roundness
+                    ),
+                    child: ToggleButtons(
+                      fillColor: Colors.grey,
+                      color: Colors.black,
+                      disabledBorderColor: Colors.green,
+                      splashColor: Colors.green,
+                      highlightColor: Colors.purple,
+                      selectedColor: Colors.amber,
+                      hoverColor: Colors.red,
+                      borderColor: Colors.grey,
+                      borderRadius: BorderRadius.circular(15.0),
+                      constraints: BoxConstraints.expand(width: 150.0),
+                      isSelected: [_selectedIndex == 0, _selectedIndex == 1],
+                      onPressed: (index) {
+                        setState(() {
+                          _selectedIndex = index;
+                        });
+                      },
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'List View',
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Map View',
+                            style: TextStyle(
+                              fontSize: 15,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Visibility(
+                  //   visible: _selectedIndex == 0,
+                  //   child: buildListView(),
+                  // ),
+                  // Visibility(
+                  //   visible: _selectedIndex == 1,
+                  //   child: buildMapView(),
+                  // ),
+                ],
+              ),
+              Visibility(
+                visible: _selectedIndex == 0,
+                child: Expanded(
+                  child: Center(
+                    child: listView(),
+                  ),
+                ),
+              ),
+              Visibility(
+                visible: _selectedIndex == 1,
+                child: Expanded(
+                  child: Center(
+                    child: mapView(),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -92,7 +161,34 @@ class _SearchEventsScreenState extends State<SearchEventsScreen> {
     );
   }
 }
+Widget listView() {
+  return Padding(
+    padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+    child: ListView.builder(
+      itemCount: 8, // Number of items in your list
+      itemBuilder: (context, index) {
+        return const CustomCard(
+          color: Colors.yellow,
+          date: "Tuesday, December 15 at 12 PM",
+          event: "Haskell #11 Roping",
+          location: "Tyler, TX",
+          publisher: "Bailey Haskell",
+          height: 150.0,
+          image: AssetImage(
+            "lib/assets/images/roping_flyer_1.png",
+          ),
+          placeHolderText: "Place image here",
+          id: 2+1,
+        );
+      },
+    ),
+  );
+}
 
+Widget mapView() {
+  // Your Map View implementation here
+  return Container(child: Text('Map View Content'), color: Colors.white,);
+}
 class DataSearch extends SearchDelegate<String> {
   final List<String> data = ["apple", "banana", "cherry", "date", "elderberry"];
 

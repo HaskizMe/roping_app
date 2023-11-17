@@ -47,8 +47,6 @@ class HomeScreen extends StatelessWidget {
                 height: 150.0,
                 image: AssetImage(
                   "lib/assets/images/roping_flyer_1.png",
-                  //width: 100,
-                  //height: 140,
                 ),
                 placeHolderText: "Place image here",
                 id: 2,
