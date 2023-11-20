@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roping_event_app/custom_widgets/cards.dart';
-import 'package:roping_event_app/screens/account.dart';
+import 'package:roping_event_app/screens/profile.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/search.dart';
 import 'screens/home.dart';
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           HomeScreen(),
           SearchEventsScreen(),
           FavoritesScreen(),
-          AccountScreen(),
+          ProfileScreen(),
           //PictureScreen()
         ],
         onPageChanged: (index) {
@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.person),
-            label: "Account",
+            label: "Profile",
             backgroundColor: Colors.grey[800]
           )
         ],

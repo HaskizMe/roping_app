@@ -187,7 +187,12 @@ Widget listView() {
 
 Widget mapView() {
   // Your Map View implementation here
-  return Container(child: Text('Map View Content'), color: Colors.white,);
+  return Container(
+    width: double.infinity,
+    height: 450,
+    child: Text('Map View Content'),
+    color: Colors.white,
+  );
 }
 class DataSearch extends SearchDelegate<String> {
   final List<String> data = ["apple", "banana", "cherry", "date", "elderberry"];
