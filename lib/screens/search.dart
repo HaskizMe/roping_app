@@ -167,7 +167,7 @@ Widget listView() {
     child: ListView.builder(
       itemCount: 8, // Number of items in your list
       itemBuilder: (context, index) {
-        return const CustomCard(
+        return const EventCard(
           color: Colors.yellow,
           date: "Tuesday, December 15 at 12 PM",
           event: "Haskell #11 Roping",

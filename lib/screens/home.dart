@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 1,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 2,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 3,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -112,7 +112,7 @@ class HomeScreen extends StatelessWidget {
                 id: 5,
               ),
 
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 6,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -142,7 +142,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 7,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",
@@ -157,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                 placeHolderText: "Place image here",
                 id: 8,
               ),
-              CustomCard(
+              EventCard(
                 color: Colors.yellow,
                 date: "Tuesday, December 15 at 12 PM",
                 event: "Haskell #11 Roping",

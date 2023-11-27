@@ -4,7 +4,7 @@ import 'package:roping_event_app/main.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/home.dart';
 import 'package:roping_event_app/screens/search.dart';
-class CustomCard extends StatefulWidget {
+class EventCard extends StatefulWidget {
   final Color color;
   final String date;
   final String event;
@@ -14,7 +14,7 @@ class CustomCard extends StatefulWidget {
   final String placeHolderText;
   final int id;
   final ImageProvider<Object> image;
-  const CustomCard({Key? key,
+  const EventCard({Key? key,
     required this.color,
     required this.date,
     required this.event,
@@ -27,10 +27,10 @@ class CustomCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomCard> createState() => _CustomCardState();
+  State<EventCard> createState() => _EventCardState();
 }
 
-class _CustomCardState extends State<CustomCard> {
+class _EventCardState extends State<EventCard> {
 
   bool isFavorite = false;
   @override
@@ -241,3 +241,46 @@ class PictureScreen extends StatelessWidget {
     );
   }
 }
+
+class SettingsCard extends StatefulWidget {
+  final String title;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final FontStyle? fontStyle;
+  final Widget? trailingWidget;
+  const SettingsCard({
+    super.key,
+    required this.title,
+    this.trailingWidget,
+    this.fontSize,
+    this.fontWeight,
+    this.fontStyle
+
+  });
+
+  @override
+  State<SettingsCard> createState() => _SettingsCardState();
+}
+
+class _SettingsCardState extends State<SettingsCard> {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: 50,
+      child: ListTile(
+        title: Text(
+          widget.title,
+          style: TextStyle(
+            fontSize: widget.fontSize,
+            fontWeight: widget.fontWeight,
+            fontStyle: widget.fontStyle
+
+          ),
+        ),
+        trailing: widget.trailingWidget,
+      ),
+    );
+  }
+}
+
