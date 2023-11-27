@@ -30,9 +30,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 16 at 12 PM",
+                event: "Coleman #11 Roping",
+                location: "Bullard, TX",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 placeHolderText: "Place image here",
@@ -40,9 +40,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 17 at 12 PM",
+                event: "#15 roping",
+                location: "Kanab, UT",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -53,9 +53,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 18 at 12 PM",
+                event: "Walker #11 Roping",
+                location: "Orem, TX",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -68,9 +68,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 19 at 12 PM",
+                event: "Hiserman #11 Roping",
+                location: "Provo, UT",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -98,9 +98,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 20 at 12 PM",
+                event: "Huff #11 Roping",
+                location: "St. George, UT",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -114,9 +114,9 @@ class HomeScreen extends StatelessWidget {
 
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 21 at 12 PM",
+                event: "Hendricks #11 Roping",
+                location: "Logan, UT",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -129,9 +129,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 22 at 12 PM",
+                event: "Toone #11 Roping",
+                location: "Grace, ID",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -144,9 +144,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 23 at 12 PM",
+                event: "Dutton #11 Roping",
+                location: "Bozeman, MT",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 image: AssetImage(
@@ -159,9 +159,9 @@ class HomeScreen extends StatelessWidget {
               ),
               EventCard(
                 color: Colors.yellow,
-                date: "Tuesday, December 15 at 12 PM",
-                event: "Haskell #11 Roping",
-                location: "Tyler, TX",
+                date: "Tuesday, December 25 at 12 PM",
+                event: "HOHOHO #11 Roping",
+                location: "North Pole, TX",
                 publisher: "Bailey Haskell",
                 height: 150.0,
                 placeHolderText: "Place image here",

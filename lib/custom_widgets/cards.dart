@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:roping_event_app/events/all_events.dart';
 import 'package:roping_event_app/main.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/home.dart';
 import 'package:roping_event_app/screens/search.dart';
+import 'package:roping_event_app/events/liked_events.dart';
+
 class EventCard extends StatefulWidget {
   final Color color;
   final String date;
@@ -13,7 +16,7 @@ class EventCard extends StatefulWidget {
   final double height;
   final String placeHolderText;
   final int id;
-  final ImageProvider<Object> image;
+  final AssetImage image;
   const EventCard({Key? key,
     required this.color,
     required this.date,
@@ -31,10 +34,15 @@ class EventCard extends StatefulWidget {
 }
 
 class _EventCardState extends State<EventCard> {
-
   bool isFavorite = false;
   @override
+  void initState() {
+    super.initState();
+    // Set the initial favorite state based on the global manager
+    isFavorite = FavoriteEventManager.isEventFavorite(widget.id);
+  }
   Widget build(BuildContext context) {
+    EventManager.allEvents.add(Event(id: widget.id, color: widget.color, date: widget.date, event: widget.event, location: widget.location, publisher: widget.publisher, height: widget.height, image: widget.image, placeHolderText: widget.placeHolderText));
     return Container(
       width: double.infinity,
       //height: 100,
@@ -166,19 +174,12 @@ class _EventCardState extends State<EventCard> {
                               setState(() {
                                 isFavorite = !isFavorite;
                               });
-
                               // Add your navigation logic here
-                              if (isFavorite) {
-                                // Navigator.of(context).push(
-                                //   MaterialPageRoute(
-                                //     builder: (context) => const FavoritesScreen(),
-                                //   ),
-                                // );
-                              }
+                              FavoriteEventManager.toggleFavorite(widget.id);
                             },
                             iconSize: 30.0,
                             color: Colors.white,
-                          )
+                          ),
                         ],
                       ),
                     ),
