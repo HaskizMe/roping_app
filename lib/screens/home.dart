@@ -35,7 +35,6 @@ class HomeScreen extends StatelessWidget {
                 location: "Bullard, TX",
                 publisher: "Bailey Haskell",
                 height: 150.0,
-                placeHolderText: "Place image here",
                 id: 1,
               ),
               EventCard(
@@ -48,7 +47,6 @@ class HomeScreen extends StatelessWidget {
                 image: AssetImage(
                   "lib/assets/images/roping_flyer_1.png",
                 ),
-                placeHolderText: "Place image here",
                 id: 2,
               ),
               EventCard(
@@ -63,7 +61,6 @@ class HomeScreen extends StatelessWidget {
                   //width: 100,
                   //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 3,
               ),
               EventCard(
@@ -78,7 +75,6 @@ class HomeScreen extends StatelessWidget {
                   //width: 100,
                   //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 4,
               ),
               Row(
@@ -108,7 +104,6 @@ class HomeScreen extends StatelessWidget {
                   //width: 100,
                   //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 5,
               ),
 
@@ -124,7 +119,6 @@ class HomeScreen extends StatelessWidget {
                   //width: 100,
                   //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 6,
               ),
               EventCard(
@@ -139,7 +133,6 @@ class HomeScreen extends StatelessWidget {
                   //width: 100,
                   //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 7,
               ),
               EventCard(
@@ -151,10 +144,7 @@ class HomeScreen extends StatelessWidget {
                 height: 150.0,
                 image: AssetImage(
                   "lib/assets/images/big_roping_flyer_4.png",
-                  //width: 100,
-                  //height: 140,
                 ),
-                placeHolderText: "Place image here",
                 id: 8,
               ),
               EventCard(
@@ -164,7 +154,6 @@ class HomeScreen extends StatelessWidget {
                 location: "North Pole, TX",
                 publisher: "Bailey Haskell",
                 height: 150.0,
-                placeHolderText: "Place image here",
                 id: 9,
               ),
             ],

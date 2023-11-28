@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:roping_event_app/events/all_events.dart';
+import 'package:roping_event_app/events/event_manager.dart';
 import 'package:roping_event_app/main.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/home.dart';
@@ -14,7 +14,6 @@ class EventCard extends StatefulWidget {
   final String location;
   final String publisher;
   final double height;
-  final String placeHolderText;
   final int id;
   final AssetImage image;
   const EventCard({Key? key,
@@ -25,7 +24,6 @@ class EventCard extends StatefulWidget {
     required this.publisher,
     required this.height,
     this.image = const AssetImage("lib/assets/images/Professional Pic of me(1).jpeg",),
-    required this.placeHolderText,
     required this.id
   }) : super(key: key);
 
@@ -42,10 +40,9 @@ class _EventCardState extends State<EventCard> {
     isFavorite = FavoriteEventManager.isEventFavorite(widget.id);
   }
   Widget build(BuildContext context) {
-    EventManager.allEvents.add(Event(id: widget.id, color: widget.color, date: widget.date, event: widget.event, location: widget.location, publisher: widget.publisher, height: widget.height, image: widget.image, placeHolderText: widget.placeHolderText));
+   // EventManager.allEvents.add(Event(id: widget.id, color: widget.color, date: widget.date, event: widget.event, location: widget.location, publisher: widget.publisher, height: widget.height, image: widget.image, placeHolderText: widget.placeHolderText));
     return Container(
       width: double.infinity,
-      //height: 100,
       child: Card(
         color: Colors.black87,
         elevation: 8.0,
@@ -65,7 +62,6 @@ class _EventCardState extends State<EventCard> {
                             MaterialPageRoute(
                               builder: (context) => PictureScreen(
                                 eventId: widget.id,
-                                testText: widget.placeHolderText,
                                 image: widget.image,
                               ),
                             )
@@ -197,11 +193,9 @@ class _EventCardState extends State<EventCard> {
 
 
 class PictureScreen extends StatelessWidget {
-  final String testText;
   final int eventId;
   final ImageProvider<Object> image;
   const PictureScreen({Key? key,
-    this.testText = 'Test',
     this.image = const AssetImage("lib/assets/images/Professional Pic of me(1).jpeg",),
     this.eventId = 32
   }) : super(key: key);

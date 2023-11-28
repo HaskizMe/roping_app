@@ -177,7 +177,6 @@ Widget listView() {
           image: AssetImage(
             "lib/assets/images/roping_flyer_1.png",
           ),
-          placeHolderText: "Place image here",
           id: 2+1,
         );
       },
