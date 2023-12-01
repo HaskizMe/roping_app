@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:roping_event_app/events/event_manager.dart';
+import 'package:roping_event_app/globals/global_variables.dart';
 import 'package:roping_event_app/main.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/home.dart';
@@ -45,7 +46,7 @@ class _EventCardState extends State<EventCard> {
       width: double.infinity,
       child: Card(
         color: Colors.black87,
-        elevation: 8.0,
+        elevation: 2.0,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -164,14 +165,35 @@ class _EventCardState extends State<EventCard> {
                         children: [
                           IconButton(
                             icon: isFavorite
-                                ? Icon(Icons.favorite_rounded, color: Colors.red)
-                                : Icon(Icons.favorite_border_rounded),
+                                ? const Icon(Icons.favorite_rounded, color: Colors.red)
+                                : const Icon(Icons.favorite_border_rounded),
                             onPressed: () {
                               setState(() {
                                 isFavorite = !isFavorite;
                               });
                               // Add your navigation logic here
+
+                              print(widget.event);
+                              print(isFavorite);
                               FavoriteEventManager.toggleFavorite(widget.id);
+
+                              Event myEvent;
+                              if(isFavorite){
+                                for(myEvent in GlobalData.allEvents){
+                                  if(myEvent.getTitle().toLowerCase() == widget.event.toLowerCase()){
+                                    myEvent.isFavorited = true;
+                                  }
+                                }
+                              }
+                              else if(!isFavorite){
+                                for(myEvent in GlobalData.allEvents){
+                                  if(myEvent.getTitle().toLowerCase() == widget.event.toLowerCase()){
+                                    myEvent.isFavorited = false;
+                                  }
+                                }
+                              }
+
+
                             },
                             iconSize: 30.0,
                             color: Colors.white,

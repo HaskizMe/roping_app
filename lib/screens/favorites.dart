@@ -24,9 +24,11 @@ class FavoritesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Favorites'),
       ),
-      body: ElevatedButton(onPressed: () { checkList(); }, child: Text("test me"),
+      body: FavoritedEvents(),
 
-      ),
+      // ElevatedButton(onPressed: () { checkList(); }, child: Text("test me"),
+
+      //),
       // body: ListView.builder(
       //   itemCount: favoritedEvents.length,
       //   itemBuilder: (context, index) {
@@ -38,6 +40,27 @@ class FavoritesScreen extends StatelessWidget {
       //     );
       //   },
       // ),
+    );
+  }
+}
+class FavoritedEvents extends StatelessWidget {
+  final List<Event> favoriteEvents = GlobalData.allEvents.where((event) => event.isLiked()).toList(); // Filter favorite events
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: favoriteEvents.length,
+      itemBuilder: (context, index) {
+        return EventCard(
+          color: Colors.blue, // Customize the color as needed
+          date: favoriteEvents[index].getDate(),
+          event: favoriteEvents[index].getTitle(),
+          location: favoriteEvents[index].getLocation(),
+          publisher: favoriteEvents[index].getPublisher(),
+          height: 150, // Customize the height as needed
+          id: favoriteEvents[index].getId(),
+          image: favoriteEvents[index].getImage(),
+        );
+      },
     );
   }
 }

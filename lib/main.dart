@@ -29,17 +29,20 @@ class MyApp extends StatelessWidget {
     // Your event initialization code here
     return [
       Event("Coleman #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),),
-      Event("Haskell #9 Team Roping", "Friday, December 1 at 12 PM", "Bailey Haskell", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
-      Event("Hiserman #10 Team Roping", "Monday, December 2 at 12 PM", "Will Hiserman", "Tyler, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_3.png",),),
-      Event("Walker #11 Team Roping", "Tuesday, December 3 at 12 PM", "Briston Walker", "Whitehouse, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_4.png",),),
-      Event("Jorgensen #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),),
-      Event("Toone #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", true, 1, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
-      Event("Tom #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
-      Event("Williams #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
-      Event("Chad #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_3.png",),),
-      Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", true, 1, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
+      Event("Haskell #9 Team Roping", "Friday, December 1 at 12 PM", "Bailey Haskell", "Bullard, TX", false, 2, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
+      Event("Hiserman #11 Roping", "Monday, December 2 at 12 PM", "Will Hiserman", "Tyler, TX", false, 3, const AssetImage("lib/assets/images/roping_flyer_3.png",),),
+      Event("Walker #11 Team Roping", "Tuesday, December 3 at 12 PM", "Briston Walker", "Whitehouse, TX", false, 4, const AssetImage("lib/assets/images/roping_flyer_4.png",),),
+      Event("Jorgensen #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 5, const AssetImage("lib/assets/images/roping_flyer_1.png",),),
+      Event("Toone #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 6, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
+      Event("Tom #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 7, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
+      Event("Williams #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 8, const AssetImage("lib/assets/images/roping_flyer_2.png",),),
+      Event("Chad #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 9, const AssetImage("lib/assets/images/roping_flyer_3.png",),),
+      Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 10, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
+      Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 11, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
+      Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 12, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
+      Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 13, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
 
-    // Add other events as needed
+      // Add other events as needed
     ];
   }
 }
@@ -76,16 +79,6 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
-    Event event1 = Event("Coleman #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event2 = Event("Haskell #9 Team Roping", "Friday, December 1 at 12 PM", "Bailey Haskell", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_2.png",),);
-    Event event3 = Event("Hiserman #10 Team Roping", "Monday, December 2 at 12 PM", "Will Hiserman", "Tyler, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_3.png",),);
-    Event event4 = Event("Walker #11 Team Roping", "Tuesday, December 3 at 12 PM", "Briston Walker", "Whitehouse, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_4.png",),);
-    Event event5 = Event("Jorgensen #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event6 = Event("Toone #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event7 = Event("Tom #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event8 = Event("Williams #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event9 = Event("Chad #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
-    Event event10 = Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 1, const AssetImage("lib/assets/images/roping_flyer_1.png",),);
 
     return Scaffold(
       body: PageView(
