@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roping_event_app/custom_widgets/cards.dart';
-import '/events/event_manager.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 class SearchEventsScreen extends StatefulWidget {
   const SearchEventsScreen({Key? key}) : super(key: key);
 

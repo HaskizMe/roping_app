@@ -1,6 +1,5 @@
 import '/events/event_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:roping_event_app/custom_widgets/cards.dart';
 import 'package:roping_event_app/screens/profile.dart';
 import 'package:roping_event_app/screens/favorites.dart';
 import 'package:roping_event_app/screens/search.dart';

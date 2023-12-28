@@ -1,4 +1,3 @@
-import 'dart:html';
 import '/events/event_manager.dart';
 
 import 'package:flutter/material.dart';
