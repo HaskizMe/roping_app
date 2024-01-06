@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
       Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 11, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
       Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 12, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
       Event("KC #11 Team Roping", "Tuesday, December 15 at 12 PM", "McKenna Coleman", "Bullard, TX", false, 13, const AssetImage("lib/assets/images/big_roping_flyer_4.png",),),
-
       // Add other events as needed
     ];
   }

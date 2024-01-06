@@ -17,6 +17,7 @@ class EventCard extends StatefulWidget {
   final double height;
   final int id;
   final AssetImage image;
+  final VoidCallback onFavoritePressed;
   const EventCard({Key? key,
     required this.color,
     required this.date,
@@ -25,7 +26,7 @@ class EventCard extends StatefulWidget {
     required this.publisher,
     required this.height,
     this.image = const AssetImage("lib/assets/images/Professional Pic of me(1).jpeg",),
-    required this.id
+    required this.id, required this.onFavoritePressed
   }) : super(key: key);
 
   @override
@@ -38,11 +39,15 @@ class _EventCardState extends State<EventCard> {
   void initState() {
     super.initState();
     // Set the initial favorite state based on the global manager
-    isFavorite = FavoriteEventManager.isEventFavorite(widget.id);
+    // isFavorite = FavoriteEventManager.isEventFavorite(widget.id);
   }
+  @override
   Widget build(BuildContext context) {
-   // EventManager.allEvents.add(Event(id: widget.id, color: widget.color, date: widget.date, event: widget.event, location: widget.location, publisher: widget.publisher, height: widget.height, image: widget.image, placeHolderText: widget.placeHolderText));
-    return Container(
+    // This finds the index of the id of the event and then looks at that index
+    // to see if its favorited or not.
+    int index = GlobalData.allEvents.indexWhere((element) => element.id == widget.id);
+    isFavorite = GlobalData.allEvents[index].isFavorited;
+    return SizedBox(
       width: double.infinity,
       child: Card(
         color: Colors.black87,
@@ -92,7 +97,7 @@ class _EventCardState extends State<EventCard> {
               child: GestureDetector(
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => SearchEventsScreen()
+                    builder: (context) => const SearchEventsScreen()
                   )
                 ),
                 child: Container(
@@ -167,34 +172,7 @@ class _EventCardState extends State<EventCard> {
                             icon: isFavorite
                                 ? const Icon(Icons.favorite_rounded, color: Colors.red)
                                 : const Icon(Icons.favorite_border_rounded),
-                            onPressed: () {
-                              setState(() {
-                                isFavorite = !isFavorite;
-                              });
-                              // Add your navigation logic here
-
-                              print(widget.event);
-                              print(isFavorite);
-                              FavoriteEventManager.toggleFavorite(widget.id);
-
-                              Event myEvent;
-                              if(isFavorite){
-                                for(myEvent in GlobalData.allEvents){
-                                  if(myEvent.getTitle().toLowerCase() == widget.event.toLowerCase()){
-                                    myEvent.isFavorited = true;
-                                  }
-                                }
-                              }
-                              else if(!isFavorite){
-                                for(myEvent in GlobalData.allEvents){
-                                  if(myEvent.getTitle().toLowerCase() == widget.event.toLowerCase()){
-                                    myEvent.isFavorited = false;
-                                  }
-                                }
-                              }
-
-
-                            },
+                            onPressed: widget.onFavoritePressed,
                             iconSize: 30.0,
                             color: Colors.white,
                           ),
