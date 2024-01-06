@@ -12,7 +12,15 @@ class Event {
   AssetImage image;
 
   // Constructor
-  Event(this.title, this.date, this.publisher, this.location, this.isFavorited, this.id, this.image);
+  Event(
+      this.title,
+      this.date,
+      this.publisher,
+      this.location,
+      this.isFavorited,
+      this.id,
+      this.image
+      );
 
   // Getter for name
   String getDate(){
