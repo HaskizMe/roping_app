@@ -15,7 +15,7 @@ class _SearchEventsScreenState extends State<SearchEventsScreen> {
     print("disposing");
     // Dispose of the TextEditingController when the widget is disposed
     _controller.dispose();
-    FocusScope.of(context).unfocus();
+    // FocusScope.of(context).unfocus();
 
     super.dispose();
   }
