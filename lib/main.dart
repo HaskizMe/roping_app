@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import '/events/event_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:roping_event_app/screens/profile.dart';
@@ -6,7 +7,10 @@ import 'package:roping_event_app/screens/search.dart';
 import 'screens/home.dart';
 import 'package:device_preview/device_preview.dart';
 import 'globals/global_variables.dart';
-void main() {
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform,);
   runApp(DevicePreview(
     enabled: true,
      // enabled: false,
